@@ -5,6 +5,9 @@
 #include <input/input_manager.h>
 #include <input/touch_input_manager.h>
 #include <system/debug_log.h>
+#include <vector>
+#include <gef.h>
+#include <maths/vector2.h>
 
 
 InputApp::InputApp(gef::Platform& platform) :
@@ -126,12 +129,22 @@ void InputApp::ProcessTouchInput()
 					// update an active touch here
 					// we're just going to record the position of the touch
 					touch_position_ = touch->position;
+					sprite1.set_colour(0xFF0000FF);
 				}
 				else if (touch->type == gef::TT_RELEASED)
 				{
 					// the touch we are tracking has been released
 					// perform any actions that need to happen when a touch is released here
 					// we're not doing anything here apart from resetting the active touch id
+					sprite1.set_colour(0xFF00FF00);
+					/*touch_position_ = touch->position;
+					gef::Vector4 sprite_position = sprite1.position();
+
+					gef::Vector2 start_pos = (sprite_position.x(), sprite_position.y());
+					gef::Vector2 my_vect = touch_position_ - start_pos;
+					my_vect = my_vect / fps_;
+					start_pos = start_pos + my_vect;
+					sprite1.set_position(start_pos.x, start_pos.y, 0);*/
 					active_touch_id_ = -1;
 				}
 			}

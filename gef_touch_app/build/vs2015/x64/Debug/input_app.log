@@ -1,2 +1,2 @@
 ﻿  input_app.cpp
-  input_app.vcxproj -> M:\DossierPerso\gef_touch_app\build\vs2015\x64\Debug\input_app.exe
+c:\users\alban\desktop\game_programming\gef_touch_app\input_app.cpp(143): error C2146: erreur de syntaxe : absence de ')' avant l'identificateur 'f'
